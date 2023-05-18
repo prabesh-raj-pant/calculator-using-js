@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(187, 168, 168);
+}
+button:focus{
+    background-color: rgb(216, 158, 83);
+}
+button:hover{
+    background-color: rgb(216, 158, 83);
+}
+body{
+    background-color: rgb(190, 184, 190);
+}
+
+.page:hover{ 
+    box-shadow: 0 0 20px 0px rgb(223, 67, 210);
+}
+.display-area{
+    background-color: black;
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+.page {
+    display: grid;
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    grid-template-areas: "header" "calci ";
+    grid-template-rows: 2fr 4fr;
+}
+.header{
+    grid-area: header;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    color: white;
+    background-color: black;
+}
+.calci{
+    display: grid;
+    grid-area: calci;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "c c  erase divide" "se ei ni multiply" "fo fi si minus" "on tw th plus" "ze ze ze equal";
+    
+}
+.col{
+    background-color: rgb(158, 204, 231);
+}
+.col:hover{
+    background-color: rgb(114, 241, 167);
+}
+.col:focus{
+    background-color: rgb(114, 241, 167);
+}
+.eras:hover{
+    background-color: rgb(122, 107, 107);
+}
+.eras:focus{
+    background-color: rgb(122, 107, 107);
+}
+.c {
+    display: grid;
+    grid-area: c;
+    color: red;
+    font-size: large;
+}
+
+.on {
+    display: grid;
+    grid-area: on;
+}
+
+.tw {
+    display: grid;
+    grid-area: tw;
+}
+
+.th {
+    display: grid;
+    grid-area: th;
+}
+
+.fo {
+    display: grid;
+    grid-area: fo;
+}
+
+.fi {
+    display: grid;
+    grid-area: fi;
+}
+
+.si {
+    display: grid;
+    grid-area: si;
+}
+
+.se {
+    display: grid;
+    grid-area: se;
+}
+
+.ei {
+    display: grid;
+    grid-area: ei;
+}
+
+.ni {
+    display: grid;
+    grid-area: ni;
+}
+
+.ze {
+    display: grid;
+    grid-area: ze;
+}
+
+.equal {
+    display: grid;
+    grid-area: equal;
+    color: red;
+    font-size: large;
+}
+.equal:hover{
+    background-color: rgb(27, 109, 27);
+}
+.equal:focus{
+    background-color: rgb(27, 109, 27);
+}
+.minus {
+    display: grid;
+    grid-area: minus;
+}
+
+.plus {
+    display: grid;
+    grid-area: plus;
+}
+
+.equal {
+    display: grid;
+    grid-area: equal;
+}
+
+.erase {
+    display: grid;
+    grid-area: erase;
+    color: red;
+    font-size: large;
+}
+
+.divide {
+    display: grid;
+    grid-area: divide;
+}
+
+.multiply {
+    display: grid;
+    grid-area: multiply;
+}

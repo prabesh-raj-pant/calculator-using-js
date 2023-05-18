@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>claculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <input class="display-area" type="text" disabled>
+        </div>
+        <section class="calci">
+            <button class="c eras" onclick="c()">AC</button>
+            <button class="erase eras" onclick="erase()">←</button>
+            <button class="divide col" onclick="operate('/')">/</button>
+            <button class="se num" onclick="join('7')">7</button>
+            <button class="ei num" onclick="join('8')">8</button>
+            <button class="ni num" onclick="join('9')">9</button>
+            <button class="multiply col" onclick="operate('*')">*</button>
+            <button class="fo num" onclick="join('4')">4</button>
+            <button class="fi num" onclick="join('5')">5</button>
+            <button class="si num" onclick="join('6')">6</button>
+            <button class="minus col" onclick="operate('-')">-</button>
+            <button class="on num" onclick="join('1')">1</button>
+            <button class="tw num" onclick="join('2')">2</button>
+            <button class="th num" onclick="join('3')">3</button>
+            <button class="plus col" onclick="operate('+')">+</button>
+            <button class="ze num" onclick="join('0')">0</button>
+            <button class="equal" onclick="equalto()">=</button>
+        </section>
+    </div>
+    <script>
+        let input = ''
+        let operator = ''
+        let ans = ''
+        function join(num) {
+            input += num;
+            display()
+        }
+
+        function operate(op) {
+            if (operator !== '') {
+                equalto();
+            }
+            operator = op;
+            ans = input;
+            input = '';
+            display();
+        }
+
+        function equalto() {
+            let num1 = parseFloat(ans);
+            let num2 = parseFloat(input);
+            switch (operator) {
+                case '+':
+                    ans = num1 + num2;
+                    break;
+                case '-':
+                    ans = num1 - num2;
+                    break;
+                case '*':
+                    ans = num1 * num2;
+                    break;
+                case '/':
+                    ans = num1 / num2;
+                    break;
+            }
+            input = ans.toString();
+            operator = '';
+            display();
+        }
+
+        function c() {
+            input = ''
+            operator = ''
+            ans = ''
+            display()
+        }
+
+        function erase() {
+            input = input.slice(0, -1)
+            display()
+        }
+
+        function display() {
+             document.querySelector(".display-area").value = input || ans || '0';
+        }
+    </script>
+</body>
+</html>
